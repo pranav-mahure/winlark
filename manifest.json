@@ -1,0 +1,23 @@
+{
+  "name": "Winlark",
+  "short_name": "Winlark",
+  "description": "Plan your day, protect your focus, review what happened. Offline-first Pomodoro planner.",
+  "id": "./",
+  "start_url": "./#/today",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "any",
+  "background_color": "#14162a",
+  "theme_color": "#14162a",
+  "categories": ["productivity"],
+  "icons": [
+    { "src": "./assets/icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "./assets/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "./assets/icons/icon.svg", "sizes": "any", "type": "image/svg+xml" }
+  ],
+  "shortcuts": [
+    { "name": "Today", "url": "./#/today" },
+    { "name": "Plan tomorrow", "url": "./#/plan" }
+  ]
+}

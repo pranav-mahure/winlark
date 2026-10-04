@@ -1,0 +1,31 @@
+/* Design tokens shared by all themes. Themes (themes.css) override colours,
+   radii, shadows and the display font. */
+@font-face {
+  font-family: 'Lora PF';
+  src: url('../assets/fonts/lora-variable.woff') format('woff');
+  font-weight: 400 700;
+  font-style: normal;
+  font-display: swap;
+}
+:root {
+  --font-body: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif;
+  --font-display: 'Lora PF', Georgia, 'Times New Roman', serif;
+  --font-mono: ui-monospace, 'SF Mono', 'Cascadia Mono', Menlo, Consolas, monospace;
+  --font-digits: var(--font-display);
+
+  --fs-xs: .75rem; --fs-sm: .8125rem; --fs-md: .9375rem; --fs-lg: 1.0625rem; --fs-xl: 1.375rem; --fs-2xl: 1.75rem; --fs-3xl: 2.25rem;
+  --sp-1: 4px; --sp-2: 8px; --sp-3: 12px; --sp-4: 16px; --sp-5: 20px; --sp-6: 24px; --sp-8: 32px; --sp-10: 40px;
+  --density: 1;
+  --card-pad: calc(18px * var(--density));
+  --gap: calc(16px * var(--density));
+
+  --radius-sm: 8px; --radius: 12px; --radius-lg: 18px; --radius-pill: 999px; --btn-radius: 10px;
+  --border-w: 1px;
+  --sidebar-w: 232px;
+  --side-col: 360px;
+  --content-max: 1240px;
+  --ease: cubic-bezier(.2, .7, .2, 1);
+  --t-fast: 120ms; --t: 200ms;
+  --z-sidebar: 20; --z-bottom: 40; --z-mini: 45; --z-focus: 60; --z-modal: 80; --z-menu: 90; --z-toast: 100; --z-tip: 110;
+  --safe-b: env(safe-area-inset-bottom, 0px);
+}

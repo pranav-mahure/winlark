@@ -1,0 +1,10 @@
+# Read by Netlify and Cloudflare Pages (ignored by other hosts).
+# The service worker must never be cached by the host/CDN, otherwise app updates would not reach users.
+/service-worker.js
+  Cache-Control: no-cache
+/manifest.json
+  Cache-Control: no-cache
+
+/*
+  X-Content-Type-Options: nosniff
+  Referrer-Policy: strict-origin-when-cross-origin

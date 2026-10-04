@@ -1,0 +1,4 @@
+Lora (variable, subset) — Copyright 2011 The Lora Project Authors (https://github.com/cyrealtype/Lora-Cyrillic).
+This Font Software is licensed under the SIL Open Font License, Version 1.1.
+The full license text is available at https://openfontlicense.org/open-font-license-official-text/
+The font is bundled locally (no CDN) so PomoFocus works offline. It was subset to Latin glyphs.

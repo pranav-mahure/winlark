@@ -1,0 +1,48 @@
+name: CI
+
+on:
+  push:
+    branches: [main, master]
+  pull_request:
+
+jobs:
+  checks:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Syntax check every JavaScript file
+        run: |
+          set -e
+          find js -name '*.js' -print0 | xargs -0 -n1 node --check
+          node --check service-worker.js
+
+      - name: Offline file list matches the app files
+        run: node tests/precache.test.mjs
+
+      - name: Install Playwright and Chromium
+        run: |
+          pip install playwright
+          playwright install --with-deps chromium
+
+      # tests/serve_like.py mimics `npx serve`, which redirects /index.html to / (this is what once
+      # broke the service worker). Port 8765 is used by the flows test; the redirect test starts its own.
+      - name: Browser tests (task, objective, habit, streak, history and review flows)
+        run: |
+          python3 tests/serve_like.py . 8765 &
+          sleep 1
+          python3 tests/e2e_flows.py
+
+      - name: Service worker redirect regression test
+        run: |
+          python3 tests/sw_redirect_test.py . | tee redirect.log
+          grep -q "RESULT: PASS" redirect.log

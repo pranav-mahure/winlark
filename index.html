@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en" data-theme="night">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>Winlark</title>
+  <meta name="description" content="Winlark — plan your day, protect your focus, and review what actually happened. Works offline.">
+  <meta name="theme-color" content="#14162a">
+  <meta name="color-scheme" content="dark light">
+  <link rel="manifest" href="./manifest.json">
+  <link rel="icon" href="./assets/icons/icon.svg" type="image/svg+xml">
+  <link rel="icon" href="./assets/icons/icon-192.png" type="image/png" sizes="192x192">
+  <link rel="apple-touch-icon" href="./assets/icons/apple-touch-icon.png">
+  <link rel="preload" href="./assets/fonts/lora-variable.woff" as="font" type="font/woff" crossorigin>
+  <link rel="stylesheet" href="./css/reset.css">
+  <link rel="stylesheet" href="./css/variables.css">
+  <link rel="stylesheet" href="./css/themes.css">
+  <link rel="stylesheet" href="./css/base.css">
+  <link rel="stylesheet" href="./css/layout.css">
+  <link rel="stylesheet" href="./css/components.css">
+  <link rel="stylesheet" href="./css/views.css">
+  <link rel="stylesheet" href="./css/responsive.css">
+  <script>
+    // Apply the saved theme before first paint (tiny UI preference; real data lives in IndexedDB).
+    try { var t = localStorage.getItem('pomofocus:theme'); if (t) document.documentElement.dataset.theme = t; } catch (e) {}
+  </script>
+</head>
+<body class="is-booting">
+  <a class="skip-link" href="#view">Skip to content</a>
+  <div class="app" id="app">
+    <aside class="sidebar" id="sidebar" aria-label="Navigation"></aside>
+    <main class="main" id="main">
+      <div class="storage-banner" id="storage-banner" role="alert" hidden>Storage is unavailable in this browser mode — changes will not be kept after this tab closes. <a href="#/settings">Export a backup</a>.</div>
+      <div id="view" class="view" tabindex="-1">
+        <div class="boot" role="status" aria-live="polite">
+          <svg class="boot__mark" viewBox="0 0 32 32" aria-hidden="true"><circle cx="16" cy="16" r="13" fill="none" stroke="currentColor" stroke-width="3" stroke-dasharray="6 2.2" opacity=".35"/><circle cx="16" cy="16" r="8" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="round" stroke-dasharray="38 60" transform="rotate(-90 16 16)"/></svg>
+          <p>Opening Winlark…</p>
+        </div>
+      </div>
+    </main>
+  </div>
+  <nav class="bottom-nav" id="bottom-nav" aria-label="Main"></nav>
+  <div class="mini-timer" id="mini-timer" hidden></div>
+  <div class="focus-mode" id="focus-mode" role="dialog" aria-modal="true" aria-label="Focus mode" hidden></div>
+  <div id="modal-root"></div>
+  <div class="toast-root" id="toast-root" aria-live="polite" aria-relevant="additions"></div>
+  <div class="tooltip" id="tooltip" role="tooltip"></div>
+  <div class="sr-only" id="sr-live" aria-live="polite"></div>
+  <noscript><div class="noscript">Winlark needs JavaScript to run.</div></noscript>
+  <script type="module" src="./js/app.js"></script>
+</body>
+</html>

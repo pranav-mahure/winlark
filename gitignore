@@ -1,0 +1,32 @@
+# --- Personal data: never commit exports or backups (they contain your tasks and history) ---
+pomofocus-*.json
+!manifest.json
+winlark-backup-*.json
+winlark-safety-copy-*.json
+pomofocus-1x-data.json
+*.backup.json
+
+# --- Dependencies / tooling ---
+node_modules/
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Test output ---
+test-results/
+playwright-report/
+screenshots/
+shots/
+
+# --- Editors and OS ---
+.vscode/
+.idea/
+*.swp
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# --- Logs and archives ---
+*.log
+*.zip
