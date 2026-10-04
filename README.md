@@ -3,7 +3,7 @@
 **Plan your day, protect your focus, review what happened.**
 An offline-first Pomodoro planner that runs entirely in your browser: no account, no server, no tracking.
 
-**Live app:** `https://winlark.pranavlabs.workers.dev/` 
+**Live app:** [winlark](https://winlark.pranavlabs.workers.dev/) 
 
 ### Preview Images
 
@@ -272,8 +272,8 @@ schema without a tested upgrade path, because real users' data lives there.
 
 ## License
 
-<!-- Choose a license (for example MIT) and add a LICENSE file, then name it here. -->
-Not yet specified.
+[**MIT LICENSE**](<MIT LICENSE>)
+
 
 ## Credits
 
